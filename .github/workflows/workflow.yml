@@ -39,7 +39,17 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: webapp
-        path: Web/bin/Release/netcoreapp2.2/publish      
+        path: Web/bin/Release/netcoreapp2.2/publish     
+        
+    - name: download build artifacts
+      uses: actions/download-artifact@master
+      with: 
+        name: webapp
+        path: ${{env.DOTNET_ROOT}}/myApp
+  
+    - name: look for webapp
+      run: |
+        ls ${{env.DOTNET_ROOT}}\myApp*        
 
   # deploy web app to azure app service
   deployWeb:
@@ -51,20 +61,11 @@ jobs:
       uses: actions/download-artifact@master
       with: 
         name: webapp
-        path: ${{env.DOTNET_ROOT}}/
-
-        
-    # Deploy build artifact to Azure App Service
-    #- name: Publish website to Azure App Service
-    #  uses: azure/appservice-actions/webapp@master
-    #  with:
-    #    app-name: abelmercurywebcore  # Replace with your app name
-    #    package: webapp  # Specify the folder or file to deploy
-    #    publish-profile: ${{ secrets.PUBLISH_PROFILE }}  # Replace with the name of your publish profile}
+        path: ${{env.DOTNET_ROOT}}/myApp
 
     - name: look for webapp
       run: |
-        ls ${{env.DOTNET_ROOT}}\*
+        ls ${{env.DOTNET_ROOT}}\myApp*
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
@@ -72,5 +73,5 @@ jobs:
         app-name: 'abelmercurywebcore'
         slot-name: 'production'
         publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-        package: ${{env.DOTNET_ROOT}}/webapp
+        package: ${{env.DOTNET_ROOT}}/myApp
         #package: webapp 
