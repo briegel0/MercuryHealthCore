@@ -5,26 +5,32 @@ on:
     branches: [ master ]
 
 jobs:
-  testStuffOut:
+    
+   testStuffOut:
+     name:   testStuffOut
 
-    runs-on: windows-latest
+     runs-on: windows-latest
 
-    steps:
+     steps:
       - name: see if msbuild is installed
         run: |
           echo ls msbuild
           ls "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin"
 
-  # build database schema, build artifact is the dacpac
-  buildDatabase:
+   # build database schema, build artifact is the dacpac
+   buildDatabase:
+    name:   buildDatabase    
+
     runs-on: windows-latest
+
     steps:
-        # checkout code from repo
-        - name: checkout repo
-        uses: actions/checkout@v1
-        # use msbuild to build VS solution which has the SSDT project
-        - name: build solution
-        run: |
+    # checkout code from repo
+    - name: checkout repo
+      uses: actions/checkout@v1
+       
+    # use msbuild to build VS solution which has the SSDT project
+    - name: build solution
+      run: |
             echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe MercuryHealthCore.sln"
             "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" MercuryHealthCore.sln
 
