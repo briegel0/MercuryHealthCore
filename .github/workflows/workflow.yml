@@ -16,10 +16,13 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+        dotnet-version: 2.2.108
+
+    - name: Build with dotnet
+        run: |
+          echo ls
+          ls
+          dotnet build Web/MercuryHealthCore.csproj --configuration Release
+  
+    - name: Test with dotnet
+        run: dotnet test Web/MercuryHealthCore.csproj --configuration Release
