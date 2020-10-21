@@ -51,7 +51,7 @@ jobs:
       uses: actions/download-artifact@master
       with: 
         name: webapp
-        path: ${{env.DOTNET_ROOT}}
+        path: ${{env.DOTNET_ROOT}}/
 
         
     # Deploy build artifact to Azure App Service
