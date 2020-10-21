@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abel\\Source\\GitHub\\abelsquidhead\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj": {}
+    "c:\\Users\\wriegel19021\\Documents\\Visual Studio Code\\Projects\\GitHubActions\\MercuryHeathCore\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abel\\Source\\GitHub\\abelsquidhead\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj": {
+    "c:\\Users\\wriegel19021\\Documents\\Visual Studio Code\\Projects\\GitHubActions\\MercuryHeathCore\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abel\\Source\\GitHub\\abelsquidhead\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj",
+        "projectUniqueName": "c:\\Users\\wriegel19021\\Documents\\Visual Studio Code\\Projects\\GitHubActions\\MercuryHeathCore\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj",
         "projectName": "MercuryHealthCore",
-        "projectPath": "C:\\Users\\abel\\Source\\GitHub\\abelsquidhead\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj",
-        "packagesPath": "C:\\Users\\abel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abel\\Source\\GitHub\\abelsquidhead\\MercuryHealthCore\\Web\\obj\\",
+        "projectPath": "c:\\Users\\wriegel19021\\Documents\\Visual Studio Code\\Projects\\GitHubActions\\MercuryHeathCore\\MercuryHealthCore\\Web\\MercuryHealthCore.csproj",
+        "packagesPath": "C:\\Users\\wriegel19021\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\wriegel19021\\Documents\\Visual Studio Code\\Projects\\GitHubActions\\MercuryHeathCore\\MercuryHealthCore\\Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\abel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\wriegel19021\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -70,10 +65,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
