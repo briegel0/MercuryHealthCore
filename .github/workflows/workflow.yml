@@ -30,4 +30,13 @@ jobs:
       run: dotnet test Web/MercuryHealthCore.csproj --configuration Release
 
     - name: Package everything up with dotnet
-      run: dotnet publish Web/MercuryHealthCore.csproj --configuration Release      
+      run: dotnet publish Web/MercuryHealthCore.csproj --configuration Release    
+      
+    - name: test variables
+      run: echo GITHUB_WORKSPACE = ${GITHUB_WORKSPACE}
+
+    - name: publish build artifacts back to GitHub
+      uses: actions/upload-artifact@master
+      with:
+        name: webapp
+        path: Web/bin/Release/netcoreapp2.2/publish      
