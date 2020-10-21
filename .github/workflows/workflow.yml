@@ -62,12 +62,15 @@ jobs:
     #    package: webapp  # Specify the folder or file to deploy
     #    publish-profile: ${{ secrets.PUBLISH_PROFILE }}  # Replace with the name of your publish profile}
 
+    - name: look for webapp
+      run: |
+        ls ${{env.DOTNET_ROOT}}\*
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
         app-name: 'abelmercurywebcore'
         slot-name: 'production'
-        #publish-profile: ${{ secrets.PUBLISH_PROFILE }}
+        publish-profile: ${{ secrets.PUBLISH_PROFILE }}
         package: ${{env.DOTNET_ROOT}}/webapp
         #package: webapp 
