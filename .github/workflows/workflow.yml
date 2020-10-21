@@ -26,3 +26,6 @@ jobs:
   
     - name: Test with dotnet
       run: dotnet test Web/MercuryHealthCore.csproj --configuration Release
+
+    - name: Package everything up with dotnet
+      run: dotnet publish Web/MercuryHealthCore.csproj --configuration Release      
