@@ -44,7 +44,7 @@ jobs:
     - name: build solution
       run: |
             echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin\MSBuild.exe MercuryHealthCore.sln"
-            "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin\MSBuild.exe"  MercuryHealthCore.sln
+            Start-Process -NoNewWindow -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin\MSBuild.exe"  -ArgumentList "MercuryHealthCore.sln"
 
 
        

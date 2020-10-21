@@ -5,4 +5,4 @@ obj/
 /src/MercuryHealth.UnitTests/FakesAssemblies/*
 /MercuryHealthDB/MercuryHealthDB.jfm
 *.dbmdl
-*.orig
+Debug/
