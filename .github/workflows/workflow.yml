@@ -1,4 +1,4 @@
-name: .NET Core
+name: Bill Mercury Health Core CI/CD
 
 on:
   push:
@@ -51,6 +51,7 @@ jobs:
       uses: actions/download-artifact@master
       with: 
         name: webapp
+        path: Web/bin/Release/netcoreapp2.2/publish
 
     # Deploy build artifact to Azure App Service
     - name: Publish website to Azure App Service
