@@ -28,6 +28,12 @@ jobs:
     # checkout code from repo
     - name: checkout repo
       uses: actions/checkout@v1
+
+    - name: see contents of current directory
+      run: |
+        echo ls "./"
+        ls "./"
+
        
     # use msbuild to build VS solution which has the SSDT project
     - name: build solution
