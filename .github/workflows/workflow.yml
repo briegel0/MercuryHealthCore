@@ -68,4 +68,5 @@ jobs:
         app-name: 'abelmercurywebcore'
         slot-name: 'production'
         publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-        package: ${{env.DOTNET_ROOT}}/webapp 
+        #package: ${{env.DOTNET_ROOT}}/webapp
+        package: webapp 
