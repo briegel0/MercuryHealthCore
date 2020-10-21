@@ -40,3 +40,22 @@ jobs:
       with:
         name: webapp
         path: Web/bin/Release/netcoreapp2.2/publish      
+
+  # deploy web app to azure app service
+  deployWeb:
+    needs: buildWeb
+    runs-on: windows-latest
+    steps:
+    # download build artifacts
+    - name: download build artifacts
+      uses: actions/download-artifact@master
+      with: 
+        name: webapp
+
+    # Deploy build artifact to Azure App Service
+    - name: Publish website to Azure App Service
+      uses: azure/appservice-actions/webapp@master
+      with:
+        app-name: abelmercurywebcore  # Replace with your app name
+        package: webapp  # Specify the folder or file to deploy
+        publish-profile: ${{ secrets.PUBLISH_PROFILE }}  # Replace with the name of your publish profile}
