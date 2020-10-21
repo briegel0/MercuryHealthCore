@@ -19,10 +19,10 @@ jobs:
         dotnet-version: 2.2.108
 
     - name: Build with dotnet
-        run: |
-          echo ls
-          ls
-          dotnet build Web/MercuryHealthCore.csproj --configuration Release
+      run: |
+        echo ls
+        ls
+        dotnet build Web/MercuryHealthCore.csproj --configuration Release
   
     - name: Test with dotnet
-        run: dotnet test Web/MercuryHealthCore.csproj --configuration Release
+      run: dotnet test Web/MercuryHealthCore.csproj --configuration Release
