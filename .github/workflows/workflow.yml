@@ -9,7 +9,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  buildWeb:
 
     runs-on: ubuntu-latest
 
