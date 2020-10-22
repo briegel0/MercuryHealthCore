@@ -43,8 +43,8 @@ jobs:
     # use msbuild to build VS solution which has the SSDT project
     - name: build solution
       run: |
-            echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin\MSBuild.exe MercuryHealthCore.sln"
-            Start-Process -NoNewWindow -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin\MSBuild.exe"  -ArgumentList "MercuryHealthCore.sln"
+            echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin\MSBuild.exe MercuryHealthCore.sln -target:MercuryHealthDB:Rebuild"
+            & "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" MercuryHealthCore.sln -target:MercuryHealthDB:Rebuild
 
 
        
