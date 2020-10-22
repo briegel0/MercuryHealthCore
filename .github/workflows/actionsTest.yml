@@ -5,21 +5,15 @@ on:
       branches: [ master ]
 
 jobs:
-  hello_world_job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-    - name: check out dir
-      uses: actions/checkout@v2
+    hello_world_job:
+        runs-on: ubuntu-latest
+        name: A job to say hello
+        steps:
+        - uses: actions/checkout@v2
+        - id: foo
+        uses: ./.github/actions/action-a@master
+        with:
+            who-to-greet: 'Mona the Octocat'
+        - run: echo random-number ${{ steps.foo.outputs.random-number }} 
+        shell: bash
 
-    - name: see contents of current directory
-      run: |
-        echo ls "/home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a"
-        ls "/home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a"
-
-    - name: run local action
-      uses: ./.github/actions/action-a@master
-      with:
-        who-to-greet: 'Mona the Octocat'
-      run: echo random-number ${{ steps.foo.outputs.random-number }} 
-      shell: bash
