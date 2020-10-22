@@ -9,8 +9,15 @@ jobs:
         runs-on: ubuntu-latest
         name: A job to say hello
         steps:
-        - uses: actions/checkout@v2
-        - id: foo
+        - name: checkout
+          uses: actions/checkout@v2
+
+        - name: see contents of current directory
+          run: |
+            echo ls "/home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a"
+            ls "/home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a"
+
+        - name: run action-a
           uses: ./.github/actions/action-a@master
           with:
             who-to-greet: 'Mona the Octocat'
