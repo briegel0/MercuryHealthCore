@@ -50,10 +50,17 @@ jobs:
     - name: view built dacpac
       run: |
         echo GITHUB_WORKSPACE "$env:GITHUB_WORKSPACE"
-        echo ls "MercuryHealthDB/bin/Debug/*.*"
+        echo "ls MercuryHealthDB/bin/Debug/*.*"
         ls "MercuryHealthDB/bin/Debug/*.*"
         echo next
         ls "$env:GITHUB_WORKSPACE/MercuryHealthDB/bin/Debug/*.*"
         echo done
       shell: pwsh
+
+     # publish build artifact (dacpac) back to github
+     - name: publish build artifacts back to GitHub
+     uses: actions/upload-artifact@master
+     with:
+       name: db
+       path: MercuryHealthDB\bin\Debug     
        
