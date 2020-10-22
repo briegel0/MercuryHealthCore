@@ -78,18 +78,19 @@ jobs:
         uses: actions/download-artifact@master
         with: 
           name: db
+          path: ${{env.DOTNET_ROOT}}/myDb
       # find where the dacpac is downloaded, make sure it's where i think it is
       - name: find dacpac
         run: |
           echo "look into db directory"
-          cd db
-          ls
+          cd ${{env.DOTNET_ROOT}}/myDb
+          ls *.*
       # call sqlpackage.exe to deploy my db schema using my dacpac
       - name: update database schema using dacpac
         run: >
           "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150\sqlpackage.exe" 
           /Action:Publish 
-          /SourceFile:"%GITHUB_WORKSPACE%\db\MercuryHealthDB.dacpac" 
+          /SourceFile:"${{env.DOTNET_ROOT}}/myDb\MercuryHealthDB.dacpac" 
           /TargetConnectionString:"${{ secrets.DATABASE_CONNECTION_STRING }}" 
           /p:BlockOnPossibleDataLoss=False
         
