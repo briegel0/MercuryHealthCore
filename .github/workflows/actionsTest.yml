@@ -18,9 +18,8 @@ jobs:
         ls "/home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a"
 
     - name: run local action
-    - id: foo
       uses: ./.github/actions/action-a@master
       with:
         who-to-greet: 'Mona the Octocat'
-    - run: echo random-number ${{ steps.foo.outputs.random-number }} 
+      run: echo random-number ${{ steps.foo.outputs.random-number }} 
       shell: bash
