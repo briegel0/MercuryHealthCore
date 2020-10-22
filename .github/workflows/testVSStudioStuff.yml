@@ -59,8 +59,8 @@ jobs:
 
      # publish build artifact (dacpac) back to github
     - name: publish build artifacts back to GitHub
-    uses: actions/upload-artifact@master
-    with:
-       name: db
-       path: MercuryHealthDB\bin\Debug     
+      uses: actions/upload-artifact@master
+      with:
+         name: db
+         path: MercuryHealthDB\bin\Debug     
        
