@@ -51,5 +51,5 @@ jobs:
       run: |
         echo ls "MercuryHealthDB/bin/Debug/*.*"
         ls "%GITHUB_WORKSPACE%/MercuryHealthDB/bin/Debug/*.*"
-
+      shell: pwsh
        
