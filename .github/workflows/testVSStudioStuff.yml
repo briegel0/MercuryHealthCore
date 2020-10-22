@@ -71,5 +71,26 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: see if sqlpackage.exe exists
-        run: ls "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150"         
+        run: ls "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150"     
+        
+      # download build artifacts
+      - name: download build artifacts
+        uses: actions/download-artifact@master
+        with: 
+          name: db
+      # find where the dacpac is downloaded, make sure it's where i think it is
+      - name: find dacpac
+        run: |
+          echo "look into db directory"
+          cd db
+          ls
+      # call sqlpackage.exe to deploy my db schema using my dacpac
+      - name: update database schema using dacpac
+        run: >
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150\sqlpackage.exe" 
+          /Action:Publish 
+          /SourceFile:"%GITHUB_WORKSPACE%\db\MercuryHealthDB.dacpac" 
+          /TargetConnectionString:"${{ secrets.DATABASE_CONNECTION_STRING }}" 
+          /p:BlockOnPossibleDataLoss=False
+        
        
