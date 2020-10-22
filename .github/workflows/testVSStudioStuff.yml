@@ -7,7 +7,7 @@ on:
     
 jobs:
 
-   testStuffOut:
+  testStuffOut:
      name:   testStuffOut
 
      runs-on: windows-latest
@@ -18,8 +18,8 @@ jobs:
           echo ls msbuild
           ls "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin"
 
-   # build database schema, build artifact is the dacpac
-   buildDatabase:
+  # build database schema, build artifact is the dacpac
+  buildDatabase:
     name:   buildDatabase    
 
     runs-on: windows-latest
@@ -63,4 +63,13 @@ jobs:
       with:
          name: db
          path: MercuryHealthDB\bin\Debug     
+
+  # deploy new database schema using dacpac
+  deployDB:
+    name:   deployDB 
+    needs: buildDatabase
+    runs-on: windows-latest
+    steps:
+      - name: see if sqlpackage.exe exists
+        run: ls "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150"         
        
