@@ -50,6 +50,6 @@ jobs:
     - name: view built dacpac
       run: |
         echo ls "MercuryHealthDB/bin/Debug/*.*"
-        ls "${GITHUB_WORKSPACE}/MercuryHealthDB/bin/Debug/*.*"
+        ls "%GITHUB_WORKSPACE%/MercuryHealthDB/bin/Debug/*.*"
 
        
