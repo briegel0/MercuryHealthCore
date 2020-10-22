@@ -9,6 +9,9 @@ outputs:
   random-number: 
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-id }}
+  total-output: 
+    description: "Total output"
+    value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }}    
 runs:
   using: "composite"
   steps: 
