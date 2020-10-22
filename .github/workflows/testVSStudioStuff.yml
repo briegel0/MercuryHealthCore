@@ -52,5 +52,6 @@ jobs:
         echo GITHUB_WORKSPACE "$env:GITHUB_WORKSPACE"
         echo ls "MercuryHealthDB/bin/Debug/*.*"
         ls "MercuryHealthDB/bin/Debug/*.*"
+        ls "$env:GITHUB_WORKSPACE/MercuryHealthDB/bin/Debug/*.*"
       shell: pwsh
        
