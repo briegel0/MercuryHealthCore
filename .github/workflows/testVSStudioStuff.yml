@@ -49,7 +49,7 @@ jobs:
 
     - name: view built dacpac
       run: |
-        echo ls "MercuryHealthDB/bin/Release/*.*"
-        ls "MercuryHealthDB/bin/Release/*.*"
+        echo ls "MercuryHealthDB/bin/Debug/*.*"
+        ls "MercuryHealthDB/bin/Debug/*.*"
 
        
