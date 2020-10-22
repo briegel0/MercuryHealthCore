@@ -47,4 +47,9 @@ jobs:
             & "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\\MSBuild\Current\Bin\MSBuild.exe" MercuryHealthCore.sln -target:MercuryHealthDB:Rebuild
       shell: pwsh
 
+    - name: view built dacpac
+      run: |
+        echo ls "MercuryHealthDB/bin/Release/*.*"
+        ls "MercuryHealthDB/bin/Release/*.*"
+
        
