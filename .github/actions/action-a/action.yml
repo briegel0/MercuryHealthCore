@@ -21,9 +21,10 @@ runs:
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
     - run: chmod +x ${{ github.action_path }}/goodbye.sh
-      shell: bash   
-    - run: ${{ github.action_path }}/goodbye.sh
+      shell: bash  
+    - id: scriptOutput 
+      run: ${{ github.action_path }}/goodbye.sh
       shell: bash
     - id: goodbyeVar
-      run: echo "::set-output name=goodbye-id::"${{ github.action_path }}/goodbye.sh
+      run: echo "::set-output name=goodbye-id::steps.scriptOutput.outputs.result"
       shell: bash    
