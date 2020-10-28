@@ -27,5 +27,9 @@ jobs:
         - run: echo total-output ${{ steps.foo.outputs.total-output }} 
           shell: bash   
         - run: echo xx ${{ steps.foo.outputs.xx }} 
-          shell: bash                   
+          shell: bash   
+        - run: chmod +x ${{ ../actions/action-a/goodbye.sh }}
+          shell: bash   
+        - run: echo goodbye.sh ${{ ../actions/action-a/goodbye.sh }}
+          shell: bash                                        
 
