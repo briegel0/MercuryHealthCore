@@ -11,7 +11,7 @@ outputs:
     value: ${{ steps.random-number-generator.outputs.random-id }}
   total-output: 
     description: "Total output"
-    value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }} Trail ${{ steps.goodbyeVar.outputs.goodbye-id }}   
+    value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }} Trail ${{ steps.goodbyeVar.outputs.goodbye-id }}  scriptOutput :${{ steps.scriptOutput.outputs.result}}
 runs:
   using: "composite"
   steps: 
@@ -26,5 +26,5 @@ runs:
       run: ${{ github.action_path }}/goodbye.sh
       shell: bash
     - id: goodbyeVar
-      run: echo "::set-output name=goodbye-id::$(echo steps.scriptOutput.outputs.result)"
+      run: echo "::set-output name=goodbye-id::${{ steps.scriptOutput.outputs.result}}"
       shell: bash    
