@@ -11,7 +11,7 @@ outputs:
     value: ${{ steps.random-number-generator.outputs.random-id }}
   total-output: 
     description: "Total output"
-    value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }} Trail ${{ steps.goodbyeVar.outputs.goodbye1 }}   
+    value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }} Trail ${{ steps.goodbyeVar.outputs.goodbye-id }}   
 runs:
   using: "composite"
   steps: 
