@@ -26,5 +26,5 @@ runs:
       run: ${{ github.action_path }}/goodbye.sh
       shell: bash
     - id: goodbyeVar
-      run: echo "::set-output name=goodbye-id::Test44 "
+      run: echo "::set-output name=goodbye-id::$(echo steps.scriptOutput.outputs.result)"
       shell: bash    
