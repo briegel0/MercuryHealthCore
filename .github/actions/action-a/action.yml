@@ -24,3 +24,6 @@ runs:
       shell: bash   
     - run: ${{ github.action_path }}/goodbye.sh
       shell: bash
+    - id: goodbyeVar
+      run: echo "::set-output name=goodbye-id::${{ github.action_path }}/goodbye.sh"
+      shell: bash    
