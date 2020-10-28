@@ -30,6 +30,6 @@ jobs:
           shell: bash   
         - run: chmod +x /home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a/goodbye.sh
           shell: bash   
-        - run: echo "goodbye.sh /home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a/goodbye.sh"
+        - run: echo "goodbye.sh ${{/home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a/goodbye.sh }}"
           shell: bash                                        
 
