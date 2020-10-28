@@ -25,5 +25,7 @@ jobs:
         - run: echo random-number ${{ steps.foo.outputs.random-number }} 
           shell: bash
         - run: echo total-output ${{ steps.foo.outputs.total-output }} 
-          shell: bash          
+          shell: bash   
+        - run: echo xx ${{ steps.foo.outputs.xx }} 
+          shell: bash                   
 

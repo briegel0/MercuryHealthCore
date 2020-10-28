@@ -9,6 +9,9 @@ outputs:
   random-number: 
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-id }}
+  xx: 
+    description: "xx"    
+    value: ${{ github.action_path }}
   total-output: 
     description: "Total output"
     value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }} Trail ${{ steps.goodbyeVar.outputs.goodbye-id }}  scriptOutput :${{ steps.scriptOutput.outputs.result}}
@@ -23,7 +26,7 @@ runs:
     - run: chmod +x ${{ github.action_path }}/goodbye.sh
       shell: bash  
     - id: scriptOutput 
-      run: ${{ github.action_path }}/goodbye.sh
+      run: ls ${{ github.action_path }}/goodbye.sh
       shell: bash
     - id: goodbyeVar
       run: echo "::set-output name=goodbye-id::${{ steps.scriptOutput.outputs.result}}"
