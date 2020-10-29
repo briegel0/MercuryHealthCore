@@ -26,7 +26,7 @@ runs:
     - run: chmod +x ${{ github.action_path }}/goodbye.sh
       shell: bash  
     - id: scriptOutput 
-      run: ls ${{ github.action_path }}/goodbye.sh
+      run: ${{ github.action_path }}/goodbye.sh
       shell: bash
     - id: goodbyeVar
       run: echo "::set-output name=goodbye-id::$(echo $GOODBYE_VAR)"
