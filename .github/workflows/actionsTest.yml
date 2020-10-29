@@ -25,11 +25,5 @@ jobs:
         - run: echo random-number ${{ steps.foo.outputs.random-number }} 
           shell: bash
         - run: echo total-output ${{ steps.foo.outputs.total-output }} 
-          shell: bash   
-        - run: echo xx ${{ steps.foo.outputs.xx }} 
-          shell: bash   
-        - run: chmod +x /home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a/goodbye.sh
-          shell: bash   
-        - run: echo "goodbye.sh ${{/home/runner/work/MercuryHealthCore/MercuryHealthCore/.github/actions/action-a/goodbye.sh }}"
           shell: bash                                        
 
