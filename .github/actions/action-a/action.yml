@@ -14,7 +14,7 @@ outputs:
     value: ${{ github.action_path }}
   total-output: 
     description: "Total output"
-    value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }} Trail ${{ steps.goodbyeVar.outputs.goodbye-id }} Path ${{ github.action_path }}
+    value: Hello ${{ inputs.who-to-greet }} Random ${{ steps.random-number-generator.outputs.random-id }} Trail ${{ steps.goodbyeVar.outputs.goodbye-id }}
 runs:
   using: "composite"
   steps: 
