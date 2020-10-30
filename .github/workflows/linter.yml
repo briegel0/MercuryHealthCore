@@ -20,6 +20,8 @@
         # Remove the line above to run when pushing to master
       pull_request:
         branches: [master]
+    workflow_dispatch:
+        branches: [ master ]        
     
     ###############
     # Set the Job #
